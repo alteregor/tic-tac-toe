@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "typecheck": "tsc -b",
     "lint": "oxlint",
+    "lint:slop-police": "slop-police",
     "format": "oxfmt",
     "preview": "vite preview"
   },
@@ -25,6 +26,7 @@
     "@vitejs/plugin-react": "^6.1.1",
     "oxfmt": "^0.71.0",
     "oxlint": "^1.81.0",
+    "slop-police": "^0.3.16",
     "typescript": "~6.0.2",
     "vite": "^8.3.0"
   },

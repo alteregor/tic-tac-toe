@@ -1,0 +1,4 @@
+{
+  "projects": ["tsconfig.app.json", "tsconfig.node.json"],
+  "entry": ["vite.config.ts", "src/main.tsx"]
+}

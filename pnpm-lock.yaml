@@ -42,6 +42,9 @@ importers:
       oxlint:
         specifier: ^1.81.0
         version: 1.86.0
+      slop-police:
+        specifier: ^0.3.16
+        version: 0.3.16
       typescript:
         specifier: ~6.0.2
         version: 6.0.3
@@ -745,6 +748,31 @@ packages:
   scheduler@0.28.0:
     resolution: {integrity: sha512-juorfCmIkIw8tT+p5BXSm6PJjQF/ycEYmKyzURCIt/RaZIhL+PulbQ9Yu2z1HdOJDdqDTlxA1+xKBmHXJsczAw==}
 
+  slop-police-darwin-arm64@0.3.16:
+    resolution: {integrity: sha512-JDgXe/KZxahOVDP9oXxgEpYhFeZVgmXLyYhL3OnJD/8IO03cXUrodYPN8gKFuH1evTun0krVUHIY2am7n+L0EQ==}
+    cpu: [arm64]
+    os: [darwin]
+
+  slop-police-darwin-x64@0.3.16:
+    resolution: {integrity: sha512-aArQz4TnM9iUSmHrNbE+Ec29aPlWGfvAOZF6l1oIAihnDPTSG5QwwCuW4Mk/+jb808OnJyJhWl26yqISESjJkQ==}
+    cpu: [x64]
+    os: [darwin]
+
+  slop-police-linux-arm64@0.3.16:
+    resolution: {integrity: sha512-Lh7k7xR+QCbYVinavgjjtiu3U+dy0YZBJFbrMompsyqditTZoeLJZ91DFGztTmiM4Rg6n2ODruBWSU2ntW1UZQ==}
+    cpu: [arm64]
+    os: [linux]
+
+  slop-police-linux-x64@0.3.16:
+    resolution: {integrity: sha512-i6dexWfz/nVxBkZ5sdKXeP1N3q2xwT3yfmzVAIafQWV1kmJGghPNpr+GZxqmAV/yPqwYSsGRLhmBNk9fu06ntg==}
+    cpu: [x64]
+    os: [linux]
+
+  slop-police@0.3.16:
+    resolution: {integrity: sha512-J/3tUv5uSO2qZ8EfZExBRRa/fSpVOA30qbql1JajtVZEHJKpLTY+wWR5H0JmfQyV1limlFVPUlyJYTfVdMxBvw==}
+    engines: {node: '>=22.18'}
+    hasBin: true
+
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
@@ -1301,6 +1329,25 @@ snapshots:
       '@rolldown/binding-win32-x64-msvc': 1.2.11
 
   scheduler@0.28.0: {}
+
+  slop-police-darwin-arm64@0.3.16:
+    optional: true
+
+  slop-police-darwin-x64@0.3.16:
+    optional: true
+
+  slop-police-linux-arm64@0.3.16:
+    optional: true
+
+  slop-police-linux-x64@0.3.16:
+    optional: true
+
+  slop-police@0.3.16:
+    optionalDependencies:
+      slop-police-darwin-arm64: 0.3.16
+      slop-police-darwin-x64: 0.3.16
+      slop-police-linux-arm64: 0.3.16
+      slop-police-linux-x64: 0.3.16
 
   source-map-js@1.2.1: {}
 
