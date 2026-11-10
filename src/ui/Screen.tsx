@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 
-export type ScreenTone = "default" | "win" | "lose" | "draw"
+type ScreenTone = "default" | "win" | "lose" | "draw"
 
 const toneBg: Record<ScreenTone, string> = {
   default: "bg-tomato",

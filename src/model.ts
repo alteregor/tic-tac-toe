@@ -2,15 +2,15 @@ import { useEffect, useState } from "react"
 import { useImmer } from "use-immer"
 
 export type Side = "x" | "o"
-export type Cell = Side | null
-export type Cells = Cell[]
-export type Line = [number, number, number]
-export type Opponent = "human" | "computer"
+type Cell = Side | null
+type Cells = Cell[]
+type Line = [number, number, number]
+type Opponent = "human" | "computer"
 export type FirstMove = "me" | "computer"
 export type Settings = { opponent: Opponent; firstMove: FirstMove }
-export type Outcome = "playing" | "win" | "lose" | "draw"
+type Outcome = "playing" | "win" | "lose" | "draw"
 
-export type Status =
+type Status =
   | { type: "playing"; next: Side }
   | { type: "won"; winner: Side; line: Line }
   | { type: "draw" }
@@ -20,7 +20,7 @@ type GameState = { cells: Cells; status: Status; computerSide: Side | null }
 const COMPUTER_DELAY_MS = 450
 const COMPUTER_MISTAKE_RATE = 0.2
 
-export const LINES: Line[] = [
+const LINES: Line[] = [
   [0, 1, 2],
   [3, 4, 5],
   [6, 7, 8],
@@ -31,17 +31,17 @@ export const LINES: Line[] = [
   [2, 4, 6],
 ]
 
-export const emptyCells = (): Cells => Array<Cell>(9).fill(null)
+const emptyCells = (): Cells => Array<Cell>(9).fill(null)
 
-export const otherSide = (side: Side): Side => (side === "x" ? "o" : "x")
+const otherSide = (side: Side): Side => (side === "x" ? "o" : "x")
 
-export function findWinLine(cells: Cells): Line | null {
+function findWinLine(cells: Cells): Line | null {
   return (
     LINES.find(([a, b, c]) => cells[a] && cells[a] === cells[b] && cells[b] === cells[c]) ?? null
   )
 }
 
-export function statusAfterMove(cells: Cells, mover: Side): Status {
+function statusAfterMove(cells: Cells, mover: Side): Status {
   const line = findWinLine(cells)
   if (line) return { type: "won", winner: mover, line }
   if (cells.every((c) => c !== null)) return { type: "draw" }
@@ -65,7 +65,7 @@ function minimax(cells: Cells, toMove: Side, me: Side, depth: number): number {
 
 const pick = <T>(items: T[]) => items[Math.floor(Math.random() * items.length)]
 
-export function computerMove(cells: Cells, side: Side, mistakeRate = COMPUTER_MISTAKE_RATE) {
+function computerMove(cells: Cells, side: Side, mistakeRate = COMPUTER_MISTAKE_RATE) {
   const free = cells.flatMap((c, i) => (c ? [] : [i]))
   if (Math.random() < mistakeRate) return pick(free)
 
